@@ -88,7 +88,8 @@ def WB_network(X,i):
     return np.array([-INa-IK-IL-ISyn-Igap+Iapp,
                      phi*(alphah(v)*(1-h) - betah(v)*h),
                      phi*(alphan(v)*(1-n) - betan(v)*n),
-                     -sex*(1/tau1E + 1/tau2E) - sey/(tau1E*tau2E) + np.dot(CMeMatrix,firing[0:Ne])+ np.dot(CMieMatrix,firing[0:Ne]),
+                     # the  updating rules of excitatory synaptic condantance for each neurons (or cells) 
+                     -sex*(1/tau1E + 1/tau2E) - sey/(tau1E*tau2E) + np.dot(CMeMatrix,firing[0:Ne])+ np.dot(CMieMatrix,firing[0:Ne]), 
                      sex,
                      -six*(1/tau1I + 1/tau2I) - siy/(tau1I*tau2I) + np.dot(CMiMatrix,firing[Ne:]) + np.dot(CMeiMatrix,firing[Ne:]),
                      six,
